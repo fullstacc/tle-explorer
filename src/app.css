@@ -1,0 +1,70 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f5f5f5;
+}
+
+body {
+  background-image: url('https://cdn.glitch.global/6f9598eb-58ca-4595-9660-22f15011ab1b/space-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; 
+}
+
+.tle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.tle {
+  padding: 5px;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.tle span {
+  cursor: pointer;
+}
+
+.tooltip {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 5px 10px;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 1;
+}
+
+.tle span:hover::after {
+  content: attr(data-tooltip);
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.tle:first-child span:hover::after {
+  top: -125%; /* Adjust this value to position the tooltip above the first line */
+}
+
+
